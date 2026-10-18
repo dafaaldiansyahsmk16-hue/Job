@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kedai Rasa Kita – Pesan Langsung via WhatsApp</title>
+<meta name="description" content="Menu makanan, minuman, dan camilan Kedai Rasa Kita. Pilih menu, pesan lewat WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a href="#atas" class="brand" id="brandName">Kedai Rasa Kita</a>
+  <button class="cart-btn" id="openCart" aria-label="Buka keranjang">
+    Pesanan <span class="badge" id="cartCount">0</span>
+  </button>
+</header>
+
+<main id="atas">
+  <section class="hero">
+    <p class="status" id="status" aria-live="polite"></p>
+    <h1>Lapar? Pilih menunya, kami siapkan.</h1>
+    <p class="lead">Pesan langsung lewat WhatsApp. Tanpa daftar, tanpa aplikasi tambahan.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#menu">Lihat menu</a>
+      <a class="btn ghost" id="waHero" href="#" target="_blank" rel="noopener">Chat WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <h2>Menu</h2>
+    <div class="chips" id="chips" role="tablist" aria-label="Kategori menu"></div>
+    <div class="grid" id="menuGrid"></div>
+  </section>
+
+  <section class="section" id="cara">
+    <h2>Cara pesan</h2>
+    <ol class="steps reveal">
+      <li><b>Pilih menu</b> lalu tekan tombol tambah.</li>
+      <li><b>Buka keranjang</b> dan isi nama serta catatan.</li>
+      <li><b>Kirim lewat WhatsApp</b>. Pesanan langsung terisi otomatis.</li>
+    </ol>
+  </section>
+
+  <section class="section info reveal" id="lokasi">
+    <h2>Lokasi dan jam buka</h2>
+    <p id="alamat"></p>
+    <p id="jam"></p>
+    <a class="btn ghost" id="maps" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Kedai Rasa Kita. Semua harga dalam rupiah.</footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M12 2a10 10 0 0 0-8.600 15L2 22l5.200-1.400A10 10 0 1 0 12 2zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.200.1-.1 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.100-.7.300-.2.300-.9.900-.9 2.200s.9 2.500 1 2.700c.1.200 1.800 2.800 4.400 3.900 2.600 1.100 2.600.7 3.100.7.500-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.2-1.200-.1-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<div class="sheet-bg" id="sheetBg" hidden></div>
+<aside class="sheet" id="sheet" aria-hidden="true" aria-label="Keranjang pesanan">
+  <div class="sheet-head">
+    <h3>Pesanan kamu</h3>
+    <button class="x" id="closeCart" aria-label="Tutup keranjang">✕</button>
+  </div>
+  <div id="cartList" class="cart-list"></div>
+  <label class="field">Nama
+    <input id="nama" type="text" placeholder="Nama kamu" autocomplete="name">
+  </label>
+  <label class="field">Catatan (opsional)
+    <textarea id="catatan" rows="2" placeholder="Contoh: tidak pedas, ambil jam 12.30"></textarea>
+  </label>
+  <div class="total"><span>Total</span><b id="total">Rp0</b></div>
+  <a class="btn primary block" id="kirim" href="#" target="_blank" rel="noopener">Kirim pesanan via WhatsApp</a>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
